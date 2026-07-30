@@ -1,0 +1,125 @@
+name: Bug report
+description: Something in the extension, the CLI, or the language server is broken.
+labels: ["bug", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for the report. Before you start:
+
+        **Never paste Oracle credentials, Seat Keys, or Pod URLs into this form.** This
+        tracker is public and indexed. If you have already leaked one somewhere, rotate it
+        and see [SECURITY.md](https://github.com/rsmiller213/epm-workbench-issues/blob/main/SECURITY.md).
+
+        Rule source and member names are usually customer data too — redact or use a
+        minimal made-up example.
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+      description: What you did, what you expected, and what you got instead.
+      placeholder: |
+        1. Opened a Pod Folder and ran EPM Workbench: Pull
+        2. Expected the Rules list to populate
+        3. Instead the sidebar stayed empty and the output channel logged a 401
+    validations:
+      required: true
+
+  - type: textarea
+    id: repro
+    attributes:
+      label: Smallest reproduction
+      description: >
+        A minimal rule file, a sequence of commands, or a `pod.json` with the identifying
+        fields blanked out. If it only happens on one specific Pod, say so — that is
+        useful information on its own.
+    validations:
+      required: false
+
+  - type: input
+    id: extension-version
+    attributes:
+      label: Extension version
+      description: VS Code → Extensions → EPM Workbench. Shown next to the name.
+      placeholder: 0.1.0
+    validations:
+      required: true
+
+  - type: input
+    id: vscode-version
+    attributes:
+      label: VS Code version and OS
+      description: Help → About (Code → About on macOS), or `code --version`.
+      placeholder: 1.104.2 · macOS 15.6 arm64
+    validations:
+      required: true
+
+  - type: dropdown
+    id: editor
+    attributes:
+      label: Editor
+      options:
+        - VS Code
+        - Cursor
+        - Windsurf
+        - VSCodium
+        - Other (say which in "What happened")
+    validations:
+      required: true
+
+  - type: dropdown
+    id: tier
+    attributes:
+      label: Licensing tier
+      description: Shown in the EPM Workbench sidebar. Pick "Not sure" if you have not activated a Seat Key.
+      options:
+        - Free
+        - Offline
+        - Full
+        - Not sure
+    validations:
+      required: true
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Which area
+      multiple: true
+      options:
+        - Calc script (.csc) editing / formatting / diagnostics
+        - Groovy rule editing / language server
+        - Pull
+        - Push / Deploy / Execute
+        - Runs panel / job logs
+        - Dimension viewer
+        - Artifact viewer
+        - Validation Rules
+        - Offline Mode / Snapshot import
+        - Seat Key activation / licensing
+        - CLI (epmwb)
+        - Something else / not sure
+    validations:
+      required: true
+
+  - type: input
+    id: epm-target
+    attributes:
+      label: EPM target
+      description: >
+        Which product and version you are pointed at — not the URL. Include the Oracle
+        monthly update if you know it.
+      placeholder: EPBCS 26.05 · Planning module
+    validations:
+      required: false
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Output channel log
+      description: >
+        View → Output → **EPM Workbench** (and **EPM Workbench LSP** for Groovy problems).
+        Copy the relevant lines. Redact hostnames and identifiers before pasting.
+      render: text
+    validations:
+      required: false

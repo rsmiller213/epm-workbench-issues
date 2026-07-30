@@ -1,0 +1,14 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Documentation
+    url: https://epmworkbench.com/docs/getting-started/install
+    about: Installation, Pod setup, Seat Keys, Offline Mode, and Validation Rules.
+  - name: Security vulnerability
+    url: https://github.com/rsmiller213/epm-workbench-issues/security/advisories/new
+    about: Report privately. Never file a public issue for a vulnerability.
+  - name: Billing, invoices, and Seat Key delivery
+    url: mailto:billing@epmworkbench.com
+    about: Purchases, seat counts, cancellations, and keys that never arrived.
+  - name: Pricing and tiers
+    url: https://epmworkbench.com/pricing
+    about: What Free, Offline, and Full include.

@@ -1,0 +1,63 @@
+name: Feature request
+description: Something the extension should do and does not.
+labels: ["enhancement", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Feature requests are welcome. The most useful ones describe the **EPM workflow**
+        you are trying to complete, not just the UI you imagine — the workflow is what we
+        can design against.
+
+        Please do not include customer application names, member names, or Pod URLs.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: What are you trying to do
+      description: The task in your actual job, and where the extension gets in the way today.
+      placeholder: >
+        I maintain the same allocation rule across four Pods and have to hand-diff them
+        after every deploy window, because there is no way to compare a rule between Pods.
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: What would you like to see
+      description: Optional. A rough sketch is fine; so is "no idea, just make it stop hurting."
+    validations:
+      required: false
+
+  - type: textarea
+    id: workaround
+    attributes:
+      label: How you handle it now
+      description: >
+        The current workaround, including anything you do outside VS Code. This tells us
+        how much pain the gap actually causes.
+    validations:
+      required: false
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Which area
+      multiple: true
+      options:
+        - Calc script (.csc) editing / formatting / diagnostics
+        - Groovy rule editing / language server
+        - Pull
+        - Push / Deploy / Execute
+        - Runs panel / job logs
+        - Dimension viewer
+        - Artifact viewer
+        - Validation Rules
+        - Offline Mode / Snapshot import
+        - Seat Key activation / licensing
+        - CLI (epmwb) / CI use
+        - AI assistant integration
+        - Something else
+    validations:
+      required: true
